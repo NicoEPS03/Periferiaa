@@ -1,0 +1,36 @@
+<div class="b">
+    <button mat-raised-button style="background-color: #fd0;" (click)="insertModal()">
+        <mat-icon>add</mat-icon>
+        <span>Nuevo</span>
+    </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+     
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="titulo">
+        <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="accion">
+        <mat-header-cell *matHeaderCellDef> Acciones</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-button title="Eliminar" (click)="deleteModal(element.id)">
+                <mat-icon>clear</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>

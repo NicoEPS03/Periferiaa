@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography">
+    <div
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white"
+    >
+        <div class="px-4 py-4">
+        <form [formGroup]="form" #frmTasks="ngForm">
+            <div [hidden]="true">
+                <mat-form-field class="input">
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="id" [hidden]="true">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="input w-full">
+                <mat-label>Titulo</mat-label>
+                <input matInput formControlName="titulo" maxlength="10" minlength="3">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="input w-full">
+                <mat-label>Descripcion</mat-label>
+                <input matInput formControlName="descripcion" maxlength="20" minlength="5">
+            </mat-form-field>
+            <br>
+        </form>
+    </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cerrar</button>
+    <button mat-button  [disabled]="frmTasks.invalid" (click)="guardar()">Guardar</button>
+</mat-dialog-actions>
