@@ -1,0 +1,1 @@
+Como primer paso debemos ejecutar el arcchivo jar "prueba-0.0.1-SNAPSHOT" donde levantara el backend y la base de datos en memoria. Después de eso para levantar el front nos debemos ubicar en la carpeta \front\prueba y ejecutar el comando "npm install", luego de eso ejecutamos el comando "ng s" para levantar la pagina.
